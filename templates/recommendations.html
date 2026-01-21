@@ -101,13 +101,35 @@
         }
 
         body {
-            font-family: 'Inter', sans-serif;
-            background: var(--background);
-            min-height: 100vh;
-            color: var(--text-primary);
-            overflow-x: hidden;
-            transition: all 0.3s ease;
-        }
+    font-family: 'Inter', sans-serif;
+    background: var(--background);
+    min-height: 100vh;
+    color: var(--text-primary);
+    overflow-x: hidden;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1920&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    opacity: 0.025;
+    z-index: -1;
+    pointer-events: none;
+}
+
+[data-mode="dark"] body::before {
+    opacity: 0.04;
+    filter: brightness(0.6);
+}
 
         /* Enhanced Theme System */
         .theme-panel {
@@ -518,13 +540,29 @@
 
         /* Results Info */
         .results-info {
-            background: var(--surface);
-            border-radius: 20px;
-            padding: 2rem;
-            margin-bottom: 3rem;
-            border: 1px solid var(--border);
-            box-shadow: var(--shadow);
-        }
+    background: var(--surface);
+    border-radius: 20px;
+    padding: 2rem;
+    margin-bottom: 3rem;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    position: relative;
+    overflow: hidden;
+}
+
+.results-info::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&q=80');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.02;
+    pointer-events: none;
+}
 
         .results-header {
             display: flex;
@@ -590,7 +628,45 @@
             transition: all 0.3s ease;
             position: relative;
         }
+/* Category-specific images for course headers */
+.course-card[data-category="Business"] .course-header::after {
+    background-image: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&q=80');
+}
 
+.course-card[data-category="Technology"] .course-header::after,
+.course-card[data-category="Computer Science"] .course-header::after {
+    background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&q=80');
+}
+
+.course-card[data-category="Arts and Humanities"] .course-header::after {
+    background-image: url('https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=400&q=80');
+}
+
+.course-card[data-category="Data Science"] .course-header::after {
+    background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&q=80');
+}
+
+.course-card[data-category="Health"] .course-header::after,
+.course-card[data-category="Life Sciences"] .course-header::after {
+    background-image: url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=400&q=80');
+}
+
+.course-card[data-category="Personal Development"] .course-header::after {
+    background-image: url('https://images.unsplash.com/photo-1516534775068-ba3e7458af70?w=400&q=80');
+}
+
+.course-card[data-category="Math and Logic"] .course-header::after,
+.course-card[data-category="Physical Science and Engineering"] .course-header::after {
+    background-image: url('https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=400&q=80');
+}
+
+.course-card[data-category="Social Sciences"] .course-header::after {
+    background-image: url('https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=400&q=80');
+}
+
+.course-card[data-category="Language Learning"] .course-header::after {
+    background-image: url('https://images.unsplash.com/photo-1546410531-bb4caa6b424d?w=400&q=80');
+}
         .course-card:hover {
             transform: translateY(-8px);
             box-shadow: var(--shadow-lg);
@@ -598,12 +674,27 @@
         }
 
         .course-header {
-            padding: 2rem;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-            color: white;
-            position: relative;
-            overflow: hidden;
-        }
+    padding: 2rem;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    color: white;
+    position: relative;
+    overflow: hidden;
+    min-height: 180px;
+}
+
+.course-header::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 200px;
+    height: 100%;
+    background-image: url('https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=400&q=80');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.1;
+    mix-blend-mode: overlay;
+}
 
         .course-header::before {
             content: '';
@@ -1327,7 +1418,7 @@
         {% if recommended_courses %}
         <div class="courses-grid">
             {% for course in recommended_courses %}
-            <div class="course-card" data-aos="fade-up" data-aos-delay="{{ loop.index0 * 100 }}">
+            <div class="course-card" data-aos="fade-up" data-aos-delay="{{ loop.index0 * 100 }}" data-category="{{ course.category }}">
                 <!-- Rating Badge -->
                 
 
