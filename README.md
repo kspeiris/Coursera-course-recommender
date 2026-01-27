@@ -157,5 +157,4 @@ Software Engineering Undergraduate (University) — portfolio & coursework proje
 
 GitHub: https://github.com/kspeiris
 
- tailored for recruiters (one-page resume-style)
-- Add example screenshots or a Dockerfile for deployment
+
