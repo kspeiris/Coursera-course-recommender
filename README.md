@@ -41,6 +41,10 @@ Why it matters:
 - No external DB required — data loaded/generated in-memory (easy to extend)
 
 ## 🏗 System Architecture
+
+![System Architecture 01](assets/Syteam%20Archi%2001.jpeg)
+![System Architecture 02](assets/Syteam%20Achi%2002.gif)
+
 - Web frontend: HTML templates (Jinja2) rendered server-side
 - Backend: Python Flask app (app.py) with routes:
   - `/` : Search form
