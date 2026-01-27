@@ -19,7 +19,7 @@ logger = logging.getLogger(__name__)
 app = Flask(__name__)
 app.secret_key = 'edu-recommend-secret-key-2024'
 
-# Theme configurations (same as before)
+# Theme configurations 
 THEMES = {
     'default': {'name': 'Ocean Blue', 'primary': '#6366f1', 'secondary': '#10b981', 'accent': '#f59e0b', 'background': '#0f172a', 'surface': '#1e293b'},
     'purple': {'name': 'Royal Purple', 'primary': '#8b5cf6', 'secondary': '#ec4899', 'accent': '#06b6d4', 'background': '#1e1b4b', 'surface': '#312e81'},
@@ -29,7 +29,7 @@ THEMES = {
     'light': {'name': 'Light Mode', 'primary': '#3b82f6', 'secondary': '#10b981', 'accent': '#f59e0b', 'background': '#ffffff', 'surface': '#f8fafc'}
 }
 
-# Enhanced sample data with realistic ratings and reviews
+#  sample data with realistic ratings and reviews
 def generate_realistic_ratings():
     """Generate realistic rating distributions for courses"""
     return {
@@ -44,7 +44,7 @@ def generate_realistic_ratings():
         }
     }
 
-# Load dataset with enhanced rating system
+# Load dataset with  rating system
 try:
     data = pd.read_csv('Coursera_courses_catalog.csv')
     logger.info("Dataset loaded successfully")
@@ -58,7 +58,7 @@ try:
     data['category'] = data['category'].fillna('General')
     data['course_skills'] = data['course_skills'].fillna('[]')
     
-    # Add rating columns if they don't exist
+    # Add rating columns 
     if 'rating' not in data.columns:
         data['rating'] = [generate_realistic_ratings()['rating'] for _ in range(len(data))]
     if 'reviews' not in data.columns:
@@ -170,7 +170,7 @@ except Exception as e:
     
     data = pd.DataFrame(sample_courses)
 
-# Predefined options (same as before)
+# Predefined options 
 predefined_categories = ["Data Science", "Business", "Health", "Arts and Humanities", "Computer Science", "Social Sciences", "Engineering", "Mathematics", "Personal Development", "Language Learning", "Artificial Intelligence", "Marketing", "Finance"]
 predefined_skills = ["Python", "Machine Learning", "Data Analysis", "AI", "Statistics", "Deep Learning", "Natural Language Processing", "Data Visualization", "SQL", "R Programming", "Excel", "Tableau", "Power BI", "Java", "JavaScript", "React", "Node.js", "Cloud Computing", "AWS", "HTML", "CSS", "Marketing", "Finance", "Leadership"]
 predefined_difficulties = ["Beginner", "Intermediate", "Advanced", "Mixed"]
@@ -178,7 +178,7 @@ predefined_languages = ["English", "Spanish", "French", "German", "Chinese", "Po
 predefined_subtitles = ["English", "Spanish", "French", "Portuguese", "German", "Chinese", "Arabic"]
 predefined_durations = ["1-3 hours", "4-6 hours", "7-10 hours", "11-15 hours", "16+ hours"]
 
-# User rating storage (in production, use a database)
+# User rating storage 
 user_ratings = {}
 
 # Helper functions
@@ -271,7 +271,7 @@ def recommend_courses(user_input, filtered_courses, top_n=8):
         for i in sim_scores[:top_n]:
             course = filtered_courses.iloc[i[0]]
             
-            # Generate star distribution if not present
+            # Generate star distribution 
             if 'stars_distribution' not in course or not course['stars_distribution']:
                 stars = generate_realistic_ratings()['stars']
             else:
