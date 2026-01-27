@@ -120,7 +120,13 @@ Implementation details:
 ![Home Page 03](assets/Home%20page%2003.png)
 ![Home Page (Dark Theme)](assets/Home%20page%20dark%20theame.png)
 
-Or record a short demo GIF showing: submit search → view recommendations → open details modal.
+### Courses Page
+![Courses Page 01](assets/Courses%20page%2001.png)
+![Course Page 02](assets/Course%20page%2002.png)
+
+### Themes
+![Themes](assets/Theams.png)
+
 
 ## 🛣 Roadmap / Future Enhancements
 - Add persistence (database) for courses and user ratings
