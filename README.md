@@ -55,7 +55,7 @@ Why it matters:
 - Data store: in-memory sample dataset generated in app.py; user ratings stored in a runtime dict (user_ratings)
 - Templates and styles are contained in `templates/` (index.html & recommendations.html)
 
-Architecture diagram (suggested): Flask app -> TF-IDF vectorizer -> Similarity ranking -> Jinja2 templates -> Browser
+
 
 ## 🛠 Tech Stack
 - Python 3.8+ (recommended 3.10+)
@@ -65,7 +65,6 @@ Architecture diagram (suggested): Flask app -> TF-IDF vectorizer -> Similarity r
 - Jinja2 templates, HTML/CSS (templates/index.html, templates/recommendations.html)
 - Optional: python-dotenv for environment variables
 
-Note: requirements.txt in the repository lists streamlit and core Python libs; Flask is used in the code but not listed there — see Installation notes below.
 
 ## ⚙ Installation
 
@@ -108,7 +107,7 @@ Notes:
    - Title, category, key skills
    - Enrollment, duration, difficulty, number of ratings
    - “Explore This Course” link opens the provider page in a new tab
-5. Click the details / rating breakdown to view more course metadata.
+5. Click the details/rating breakdown to view more course metadata.
 
 Implementation details:
 - The recommendation function builds a `course_features` text field combining course name, category and skills and uses scikit-learn's TfidfVectorizer to compute similarity to the user query.
@@ -137,11 +136,7 @@ Contributions are welcome.
 3. Commit your changes and push: git push origin feature/your-feature
 4. Open a Pull Request describing your change
 
-Please include tests for new core functionality.
 
-## 📄 License
-No LICENSE file detected in the repository at the time of writing. If you want this to be open-source, consider adding an MIT license:
-- Create a `LICENSE` file containing the MIT license text and add a license badge to this README.
 
 ## 👤 Author
 **kspeiris**  
@@ -149,16 +144,5 @@ Software Engineering Undergraduate (University) — portfolio & coursework proje
 
 GitHub: https://github.com/kspeiris
 
----
-
-What I checked while writing this README:
-- app.py — recommendation and filtering pipeline, route handlers, sample data generation
-- templates/index.html — search form and UI
-- templates/recommendations.html — results layout, course card design, details modal
-- requirements.txt — contains pandas, numpy, scikit-learn, python-dotenv, streamlit (note mismatch: Flask used in code but not listed)
-
-If you'd like, I can:
-- Add a ready-to-commit MIT LICENSE file
-- Generate a short CONTRIBUTING.md and CODE_OF_CONDUCT.md
-- Produce a smaller README variant tailored for recruiters (one-page resume-style)
+ tailored for recruiters (one-page resume-style)
 - Add example screenshots or a Dockerfile for deployment
