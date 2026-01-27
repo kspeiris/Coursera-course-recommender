@@ -42,8 +42,9 @@ Why it matters:
 
 ## 🏗 System Architecture
 
-![System Architecture 01](assets/Syteam%20Archi%2001.png)
-![System Architecture 02](assets/Syteam%20Achi%2002.gif)
+![System Architecture 01](assets/Systeam%20Archi%2001.png)
+![System Architecture 02](assets/Systeam%20Achi%2002.gif)
+
 
 - Web frontend: HTML templates (Jinja2) rendered server-side
 - Backend: Python Flask app (app.py) with routes:
