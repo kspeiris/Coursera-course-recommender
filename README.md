@@ -114,9 +114,11 @@ Implementation details:
 - Top N results are returned with enriched metadata (rating distribution, similarity score capped for display, generated sample stats when missing).
 
 ## 🖼 Screenshots / Demo
-(Place screenshots here)
-- screenshots/search-form.png
-- screenshots/recommendations-grid.png
+### Home Page
+![Home Page 01](assets/Home%20page%2001.png)
+![Home Page 02](assets/Home%20page%2002.png)
+![Home Page 03](assets/Home%20page%2003.png)
+![Home Page (Dark Theme)](assets/Home%20page%20dark%20theame.png)
 
 Or record a short demo GIF showing: submit search → view recommendations → open details modal.
 
