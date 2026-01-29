@@ -130,7 +130,7 @@ body::before {
     opacity: 0.05;
     filter: brightness(0.7);
 }
-        /* Enhanced Theme System */
+        /*Enhanced Theme System */
         .theme-panel {
             position: fixed;
             top: 20px;
@@ -1398,7 +1398,7 @@ body::before {
             offset: 100
         });
 
-        // Enhanced Theme Manager
+        // Theme Manager
         class ProfessionalThemeManager {
             constructor() {
                 this.currentTheme = '{{ current_theme }}';
@@ -1569,7 +1569,7 @@ body::before {
                 if (savedMode) this.currentMode = savedMode;
                 
                 this.updateUI();
-                this.applyChanges(); // Apply loaded preferences
+                this.applyChanges(); 
             }
 
             showSuccessMessage(message = 'Theme applied successfully!') {
